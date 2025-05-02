@@ -231,7 +231,7 @@
 
     <div class="container">
         <section id="saying" class="intro">
-            <h2>Neuron BUG 警戒我自己，别在傻问题上花时间</h2>
+            <h2>以Neuron BUG 警戒我自己，别在傻问题上花时间</h2>
             <h3>那时的我在：</h3>
             <ul>
                 <li>实现保存模型</li>
@@ -239,7 +239,14 @@
             </ul>
             <p>在训练模型的时候我想靠和Neuron聊天度过时间（这同时也是测试）</p>
             <p>运行时代码报错：</p>
-            <p></p>
+            <div class="project-card">
+                <p>raise RuntimeError(</p>
+                <p>RuntimeError: Error(s) in loading state_dict for Seq2SeqWithAttention:</p>
+                <p>            size mismatch for encoder.embedding.weight: copying a param with shape torch.Size([1627, 128]) from checkpoint, the shape in current model is torch.Size([1451, 128]).</p>
+                <p>            size mismatch for decoder.embedding.weight: copying a param with shape torch.Size([1627, 128]) from checkpoint, the shape in current model is torch.Size([1451, 128]).</p>
+                <p>            size mismatch for decoder.fc.weight: copying a param with shape torch.Size([1627, 256]) from checkpoint, the shape in current model is torch.Size([1451, 256]).</p>
+                <p>            size mismatch for decoder.fc.bias: copying a param with shape torch.Size([1627]) from checkpoint, the shape in current model is torch.Size([1451]).</p>
+            </div>
             <p><strong>愚蠢的我以为是代码写错了，没控制好数据大小</strong></p>
             <p>我在这事儿上花了几个小时！每次训练都要重新搞！</p>
             <p>结果那是因为我增加了数据集的数据，所以词汇表文件变大了，和原来的模型不匹配 (ノへ￣、)</p>
