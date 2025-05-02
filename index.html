@@ -5,19 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>xinhaitianze's personal homepage</title>
     <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #34495e;
+            --accent: #3498db;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
-            color: #333;
+            background-color: var(--light);
+            color: var(--dark);
         }
         header {
-            background-color: #2c3e50;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 2rem 0;
+            padding: 3rem 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header::after {
+            content: "";
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="10" height="10" x="0" y="0" fill="white" opacity="0.1"/></svg>');
+            opacity: 0.1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 0;
         }
         .container {
             max-width: 800px;
@@ -27,39 +47,179 @@
         h1 {
             margin: 0;
             font-size: 2.5rem;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .header-subtitle {
+            position: relative;
+            z-index: 1;
+            opacity: 0.9;
         }
         .intro {
             background: white;
             padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+        .intro:hover {
+            transform: translateY(-5px);
         }
         footer {
             text-align: center;
-            padding: 1rem;
-            background: #2c3e50;
+            padding: 2rem;
+            background: var(--primary);
             color: white;
         }
         nav {
-            background: #34495e;
+            background: var(--secondary);
             padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav .container {
+            display: flex;
+            justify-content: center;
+            padding: 0 2rem;
         }
         nav a {
             color: white;
-            margin: 0 1rem;
+            margin: 0 1.5rem;
             text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            position: relative;
         }
         nav a:hover {
-            text-decoration: underline;
+            color: var(--accent);
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            display: block;
+            margin: 0 auto 1.5rem;
+        }
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .project-card h4 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .project-status {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 0.5rem;
+        }
+        .status-active {
+            background: #2ecc71;
+            color: white;
+        }
+        .status-paused {
+            background: #f39c12;
+            color: white;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--accent);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-right: 1rem;
+        }
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .btn-gh {
+            background: var(--primary);
+        }
+        .btn-gh:hover {
+            background: #1a252f;
+        }
+        .dream-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed #eee;
+        }
+        .dream-item:last-child {
+            border-bottom: none;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s;
+        }
+        .social-icon:hover {
+            transform: scale(1.2);
+        }
+        @media (max-width: 768px) {
+            nav .container {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>xinhaitianze</h1>
-        <p>欢迎来到我的主页</p>
-        <p>Welcome to my personal homepage</p>
+        <div class="container">
+            <h1>xinhaitianze</h1>
+            <p class="header-subtitle">欢迎来到我的主页 | Welcome to my personal homepage</p>
+        </div>
     </header>
 
     <nav>
@@ -72,41 +232,81 @@
 
     <div class="container">
         <section id="about" class="intro">
-            <h2>关于我</h2>
-            <img src="image/this_is_me.jpg" alt="我的头像" style="width:150px; border-radius:50%; margin:10px auto; display:block;">
-            <h3>Hello! I'm xinhaitianze</h3>
-            <p>这个名字来源于“新海田泽”的拼音</p>
-            <p>而它又是由我的日语名“新海田沢”</p>
+            <img src="image/this_is_me.jpg" alt="我的头像" class="avatar">
+            <h2>Hello! I'm xinhaitianze</h2>
+            <p>这个名字来源于"新海田泽"的拼音</p>
+            <p>而"新海田泽"又是源于我的日语名"新海田沢"(<strong>shinkai tazawa</strong>)</p>
+            
+            <h2><strong>我的梦想是什么？</strong></h2>
+            
+            <div class="dream-item">
+                <h3>AI训练 (<strong>Neuron</strong>) 
+                    <span class="project-status status-active">活跃开发中</span>
+                </h3>
+                <p>一个基于学习的对话AI系统，目标是创造有有趣的智能交互体验。</p>
+            </div>
+            
+            <div class="dream-item">
+                <h3>操作系统 (<strong>rational OS 有理操作系统</strong>)
+                    <span class="project-status status-paused">暂时搁置</span>
+                </h3>
+                <p>一个从零开始构建的操作系统(它似乎并不现代)。</p>
+            </div>
+            
+            <div class="dream-item">
+                <h3>游戏 (<strong>Sleep</strong>)
+                    <span class="project-status status-paused">暂时搁置</span>
+                </h3>
+                <p>一款关于睡眠的游戏,内容我还没确定。</p>
+            </div>
         </section>
 
         <section id="projects" class="intro">
             <h2>我的项目</h2>
             
-            <!-- Neuron项目 -->
             <div class="project-card">
-                <h4>Neuron - AI对话系统</h4>
-                <p>一个简单的训练程序，她是一个开始</p>
+                <h4><span>🧠</span> Neuron - AI对话系统</h4>
+                <p>一个基于深度学习的智能对话AI系统，具有个性化交互和持续学习能力。</p>
                 <p><strong>技术栈</strong>: Python, PyTorch</p>
+                <p><strong>当前功能</strong>:</p>
+                <ul>
+                    <li>可以进行一些对话,但效果不佳</li>
+                    <li>模块化训练框架</li>
+                </ul>
                 <a href="https://github.com/xinhaitianze/Neuron" class="btn btn-gh" target="_blank">
-                    <img src="image/GithubLogo.png" width="16" style="vertical-align: middle;"> 查看源码
+                    <img src="image/GithubLogo.png" width="16" alt="GitHub"> 查看源码
                 </a>
             </div>
-        
-            <!-- 占位提示 -->
-            <div style="text-align: center; color: #7f8c8d; margin-top: 2rem;">
-                <p>更多项目正在开发中,请等待...</p>
+            
+            <div class="project-card">
+                <h4><span>🔮</span> 未来项目</h4>
+                <p>更多精彩项目正在规划中...</p>
+                <p><strong>可能方向</strong>: 计算机图形学、解释性语言、游戏开发</p>
+                <div style="text-align: center; color: #7f8c8d; padding: 1rem;">
+                    <p>Stay tuned for more exciting projects!</p>
+                </div>
             </div>
         </section>
 
         <section id="contact" class="intro">
             <h2>联系我</h2>
-            <p>邮箱: xinhaitianze@outlook.com</p>
-            <p>Github: https://github.com/xinhaitianze</p>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div>
+                    <h3>邮箱</h3>
+                    <p><a href="mailto:xinhaitianze@outlook.com" style="color: var(--accent);">xinhaitianze@outlook.com</a></p>
+                </div>
+                <div>
+                    <h3>GitHub</h3>
+                    <p><a href="https://github.com/xinhaitianze" target="_blank" style="color: var(--accent);">github.com/xinhaitianze</a></p>
+                </div>
+            </div>
+        
         </section>
     </div>
 
     <footer>
         <p>&copy; 2025 xinhaitianze. 保留所有权利。</p>
+        <p>Made with ❤️ and ☕</p>
     </footer>
 </body>
 </html>
