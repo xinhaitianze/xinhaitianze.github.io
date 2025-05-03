@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="xinhaitianze-AI.ico" type="image/x-icon">
     <title>xinhaitianze's personal homepage</title>
     <style>
         :root {
@@ -244,7 +245,7 @@
                 <h3>AI训练 (<strong>Neuron</strong>) 
                     <span class="project-status status-active">活跃开发中</span>
                 </h3>
-                <p>一个基于学习的对话AI系统，目标是创造有有趣的智能交互体验。</p>
+                <p>一个基于学习的对话AI系统，目标是创造有有趣的智能交互体验。 (づ｡◕‿‿◕｡)づ</p>
             </div>
             
             <div class="dream-item">
@@ -267,7 +268,164 @@
                 </h3>
                 <p>一款关于睡眠的游戏,内容我还没确定。</p>
             </div>
+
+            <div class="dream-item">
+                <h3>编程语言 (<strong>CodeX</strong>) 
+                    <span class="project-status status-paused">未开始</span>
+                </h3>
+                <p>字面意义，无描述，因为它还没开始。</p>
+            </div>
         </section>
+
+        <section id="goal" class="intro">
+            <h2>🚀 年度征服计划</h2>
+            
+            <!-- Neuron训练进度 -->
+            <div class="dream-card" style="--accent-color: #9b59b6;">
+              <div class="dream-header">
+                <span class="moe-icon">🧠</span>
+                <h3>Neuron育成计划</h3>
+                <span class="tag" style="background:#f06b5c;">最高优先级</span>
+              </div>
+              
+              <div class="progress-container">
+                <div class="progress-bar" style="width:25%;">
+                  <span class="progress-text">25%</span>
+                  <div class="progress-wave"></div>
+                </div>
+              </div>
+              
+              <ul class="task-list">
+                <li class="completed">✅ 基础对话框架搭建</li>
+                <li class="completed">✅ 颜文字卖萌模块</li>
+                <li class="current">🔄 <strong>上下文理解训练</strong> (预计剩余∞周)</li>
+              </ul>
+              
+              <div class="moe-motivation">
+                <img src="xinhaitianze-AI.ico" width="50" >
+                <span>今日Neuron也在努力学习中</span>
+              </div>
+            </div>
+          </section>
+          
+          <style>
+            /* 新增CSS */
+            .dream-card {
+              background: white;
+              border-radius: 15px;
+              padding: 1.5rem;
+              box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+              border-top: 4px solid var(--accent-color);
+              position: relative;
+              overflow: hidden;
+            }
+            .dream-card::after {
+              content: "";
+              background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.3) 10px,
+                rgba(255,255,255,0.3) 20px
+              );
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              height: 4px;
+            }
+            .dream-header {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              margin-bottom: 1rem;
+            }
+            .moe-icon {
+              font-size: 1.8rem;
+              filter: drop-shadow(0 0 2px rgba(0,0,0,0.2));
+            }
+            .tag {
+              padding: 0.2rem 0.8rem;
+              border-radius: 20px;
+              font-size: 0.7rem;
+              color: white;
+              margin-left: auto;
+            }
+            .progress-container {
+              height: 30px;
+              background: #ecf0f1;
+              border-radius: 15px;
+              margin: 1rem 0;
+              position: relative;
+              overflow: hidden;
+            }
+            .progress-bar {
+              height: 100%;
+              background: linear-gradient(90deg, 
+                var(--accent-color), 
+                #ffe57f);
+              position: relative;
+              transition: width 1s ease;
+            }
+            .progress-text {
+              position: absolute;
+              right: 10px;
+              top: 50%;
+              transform: translateY(-50%);
+              color: white;
+              font-weight: bold;
+              text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            }
+            .progress-wave {
+              position: absolute;
+              top: -20px;
+              left: 0;
+              width: 200%;
+              height: 200%;
+              background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23ffffff50" opacity=".25"/></svg>');
+              animation: wave 3s linear infinite;
+            }
+            .task-list {
+              padding-left: 1.5rem;
+              list-style-type: none;
+            }
+            .task-list li {
+              margin: 0.5rem 0;
+              position: relative;
+            }
+            .task-list li::before {
+              content: "";
+              position: absolute;
+              left: -1.5rem;
+              top: 0.4rem;
+              width: 1rem;
+              height: 1rem;
+            }
+            .completed::before {
+              background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%232ecc71"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>');
+            }
+            .current::before {
+              background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23f39c12"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46A7.93 7.93 0 0020 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74A7.93 7.93 0 004 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>');
+              animation: spin 1s linear infinite;
+            }
+            .moe-motivation {
+              margin-top: 1rem;
+              padding: 0.8rem;
+              background: #f8f9fa;
+              border-radius: 10px;
+              display: flex;
+              align-items: center;
+              gap: 10px;
+            }
+            
+            @keyframes wave {
+              0% { transform: translateX(0); }
+              100% { transform: translateX(-50%); }
+            }
+            @keyframes spin {
+              100% { transform: rotate(360deg); }
+            }
+          </style>
 
         <section id="projects" class="intro">
             <h2>我的项目</h2>
