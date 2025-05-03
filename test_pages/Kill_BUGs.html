@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  /* === 血腥红黑战场风格 === */
+  body {
+    background: #111;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Arial Black', sans-serif;
+  }
+  
+  /* === BUG屠杀宣言标题 === */
+  .declaration {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ff0000;
+    text-align: center;
+    z-index: 100;
+    text-shadow: 0 0 10px #f00;
+  }
+  
+  h1 {
+    font-size: 5rem;
+    margin: 0;
+    animation: glitch 1s infinite;
+  }
+  
+  /* === BUG尸体雨特效 === */
+  .bug {
+    position: absolute;
+    color: #0f0;
+    font-size: 2rem;
+    animation: fall linear forwards;
+    z-index: 10;
+  }
+  
+  /* === 血迹飞溅特效 === */
+  .blood {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #f00;
+    border-radius: 50%;
+    opacity: 0.8;
+    transform: scale(0);
+    animation: splatter 0.5s forwards;
+  }
+  
+  /* === 关键帧动画 === */
+  @keyframes glitch {
+    0% { text-shadow: 0 0 10px #f00; }
+    25% { text-shadow: -5px -5px 10px #0f0; }
+    50% { text-shadow: 5px 5px 10px #00f; }
+    100% { text-shadow: 0 0 10px #f00; }
+  }
+  
+  @keyframes fall {
+    to { 
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes splatter {
+    to {
+      transform: scale(3);
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="declaration">
+    <h1>I'LL KILL ALL BUGS!</h1>
+    <p style="color:#fff;">System.Exterminate(BUGs);</p>
+  </div>
+
+  <script>
+    // 生成BUG尸体雨
+    function spawnBugs() {
+      const bugs = ['🐛', '🐜', '🕷', '🦟', '💻', '🐞'];
+      const bug = document.createElement('div');
+      bug.className = 'bug';
+      bug.textContent = bugs[Math.floor(Math.random() * bugs.length)];
+      bug.style.left = Math.random() * 100 + 'vw';
+      bug.style.animationDuration = Math.random() * 2 + 1 + 's';
+      document.body.appendChild(bug);
+      
+      // 生成血迹
+      setTimeout(() => {
+        const blood = document.createElement('div');
+        blood.className = 'blood';
+        blood.style.left = bug.style.left;
+        blood.style.top = bug.offsetTop + 'px';
+        document.body.appendChild(blood);
+        
+        // 移除元素
+        setTimeout(() => {
+          bug.remove();
+          blood.remove();
+        }, 2000);
+      }, 1000);
+    }
+    
+    // 每0.2秒生成一个新BUG
+    setInterval(spawnBugs, 200);
+    
+    // 点击特效
+    document.addEventListener('click', (e) => {
+      const explosion = document.createElement('div');
+      explosion.style.position = 'absolute';
+      explosion.style.left = e.clientX + 'px';
+      explosion.style.top = e.clientY + 'px';
+      explosion.style.fontSize = '3rem';
+      explosion.textContent = '💥';
+      explosion.style.animation = 'fall 1s forwards';
+      document.body.appendChild(explosion);
+      
+      setTimeout(() => explosion.remove(), 1000);
+    });
+  </script>
+</body>
+</html>

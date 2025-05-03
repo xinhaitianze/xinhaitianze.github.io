@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  /* === 基岩风格背景 === */
+  header {
+    background: 
+      /* 故障风红蓝渐变 */
+      linear-gradient(45deg, 
+        rgba(255, 0, 100, 0.3) 0%, 
+        rgba(0, 200, 255, 0.5) 50%,
+        rgba(150, 0, 255, 0.3) 100%),
+      /* 赛博城市背景 */
+      url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0ff;
+    font-family: 'Courier New', monospace;
+  }
+
+  /* === 霓虹光污染特效 === */
+  header::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+      linear-gradient(45deg, 
+        transparent 45%, 
+        rgba(255, 0, 100, 0.1) 50%,
+        transparent 55%),
+      linear-gradient(-45deg, 
+        transparent 45%, 
+        rgba(0, 200, 255, 0.1) 50%,
+        transparent 55%);
+    animation: scan 8s linear infinite;
+  }
+
+  /* === 数据流网格 === */
+  header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.5;
+  }
+
+  /* === 故障风标题 === */
+  h1 {
+    font-size: 5rem;
+    text-transform: uppercase;
+    position: relative;
+    text-shadow: 
+      0 0 10px #0ff,
+      0 0 20px #0ff,
+      5px 5px 0 rgba(255, 0, 100, 0.5);
+    animation: glitch 2s infinite alternate;
+  }
+
+  h1::before, h1::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  h1::before {
+    color: #f0f;
+    z-index: -1;
+    animation: glitch-before 1s infinite alternate;
+  }
+
+  h1::after {
+    color: #0ff;
+    z-index: -2;
+    animation: glitch-after 2s infinite alternate;
+  }
+
+  /* === 关键帧动画 === */
+  @keyframes scan {
+    0% { transform: rotate(0deg) translateY(0); }
+    100% { transform: rotate(360deg) translateY(0); }
+  }
+
+  @keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-3px, 3px); }
+    40% { transform: translate(-3px, -3px); }
+    60% { transform: translate(3px, 3px); }
+    80% { transform: translate(3px, -3px); }
+    100% { transform: translate(0); }
+  }
+
+  @keyframes glitch-before {
+    0% { transform: translate(0); clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%); }
+    20% { transform: translate(-6px, 6px); clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%); }
+    100% { transform: translate(0); }
+  }
+
+  @keyframes glitch-after {
+    0% { transform: translate(0); clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%); }
+    20% { transform: translate(6px, -6px); clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%); }
+    100% { transform: translate(0); }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1 data-text="NEURON">NEURON</h1>
+  </header>
+</body>
+</html>
