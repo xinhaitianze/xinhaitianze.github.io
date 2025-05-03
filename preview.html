@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新海田泽 - 界面预览</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #34495e;
+            --accent: #3498db;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            color: var(--dark);
+        }
+        
+        .preview-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .preview-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .preview-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .preview-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .preview-thumbnail {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .preview-thumbnail::after {
+            content: "点击预览";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .preview-thumbnail:hover::after {
+            opacity: 1;
+        }
+        
+        .preview-info {
+            padding: 1.5rem;
+        }
+        
+        .preview-title {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        
+        .preview-status {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .status-dev {
+            background: #f39c12;
+            color: white;
+        }
+        
+        .status-ready {
+            background: #2ecc71;
+            color: white;
+        }
+        
+        .preview-btn {
+            display: block;
+            padding: 0.8rem;
+            background: var(--accent);
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: background 0.3s;
+        }
+        
+        .preview-btn:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-container">
+        <div class="preview-header">
+            <h1>未发布界面预览</h1>
+            <p>以下是未发布的界面，点击查看详情</p>
+        </div>
+        
+        <div class="preview-info">
+            <a href="./index.html" class="preview-btn">返回主界面</a>
+        </div>
+        <div class="preview-grid">
+            <div class="preview-card">
+                <div class="preview-info">
+                    <span class="preview-status status-dev">不发布，仅预览</span>
+                    <h3 class="preview-title">Neuron 界面 0</h3>
+                    <p>Neuron 万岁。</p>
+                    <!-- 按钮链接（跳转到Neuron0.html） -->
+                    <a href="./test_pages/Neuron0.html" class="preview-btn">立即查看</a>
+                </div>
+            </div>
+
+            <div class="preview-card">
+                <div class="preview-info">
+                    <span class="preview-status status-dev">不发布，仅预览</span>
+                    <h3 class="preview-title">Neuron 界面 1</h3>
+                    <p>Neuron 万岁。</p>
+                    <a href="./test_pages/Neuron1.html" class="preview-btn">立即查看</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

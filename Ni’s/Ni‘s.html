@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./image\404.png" type="image/x-icon">
-    <title>404 你在试图访问不存在的页面</title>
+    <title>xinhaitianze's personal homepage</title>
     <style>
         :root {
             --primary: #2c3e50;
             --secondary: #34495e;
             --accent: #3498db;
-            --light: #ecf0f1;
+            --light: #f1aa86;
             --dark: #2c3e50;
         }
         body {
@@ -218,36 +217,107 @@
 <body>
     <header>
         <div class="container">
-            <h1>404</h1>
-            <p class="header-subtitle">发生了什么？| What's happen?</p>
+            <h1>xinhaitianze</h1>
+            <p class="header-subtitle">欢迎来到我的主页 | Welcome to my personal homepage</p>
         </div>
     </header>
 
     <nav>
         <div class="container">
-            <a href="./index.html" target="_blank" style="color: var(--accent);">主界面</a>
+            <a href="#about">关于我</a>
+            <a href="#projects">项目</a>
+            <a href="#contact">联系</a>
         </div>
     </nav>
 
     <div class="container">
-        <section id="saying" class="intro">
-            <img src="./image/404.png" alt="我的头像" class="avatar">
-            <h1><strong>你在试图访问不存在的页面</strong></h1>
-            <p>当然不能让你得逞！</p>
-            <h2>为什么会这样？</h2>
-            <p>这可能是管理员（我！）删除了相关文件，或者网页有变更</p>
-            <h2>我该怎么做？</h2>
-            <p>联系管理员获得更多的相关信息</p>
-            <h3>邮箱：</h3>
-            <p>xinhaitianze@outlook.com</p>
-            <h6>有很大概率，我不会看邮箱</h6>
-            <h6>所以你还是换个网页浏览吧，试试去到主界面</h6>
+        <section id="about" class="intro">
+            <img src="image/this_is_me.jpg" alt="我的头像" class="avatar">
+            <h2>Hello! I'm Nixx,a CodeCrafter</h2>
+            <p>我只是千万计算机技术爱好者之一，所以我的网名叫Nixx倪某某</p>
+            <p>而"CodeCrafter"，字面意思，就是“代码工匠”。在我眼里，程序员从来不叫“码农，码畜”，而是一个很高尚的职业。<br><q>任何编码者，都是值得被尊敬的工匠</q></p>
+            
+            <h2><strong>我的梦想是什么？</strong></h2>
+            
+            <div class="dream-item">
+                <h3><span>🧠</span> MLPStudy
+                    <span class="project-status status-active">活跃开发中</span>
+                </h3>
+                <p>一个用于创建多层感知机MLP(也叫前馈神经网络FNN)的C++库，为了更加容易地入手机器学习。<br>将来会做出基于Raylib3D的神经元可视化！</p>
+            </div>
+            
+            <div class="dream-item">
+                <h3>Web 程序(<strong>CodeCMS</strong>)
+                    <span class="project-status status-paused">活跃开发中</span>
+                </h3>
+                <p>PHP实战：一个简易而不简单的内容管理系统Content Manage System(cms)</p>
+            </div>
+            
+            <div class="dream-item">
+                <h3>游戏 (<strong>Minecraft C++ Edition</strong>)
+                    <span class="project-status status-paused">活跃开发中</span>
+                </h3>
+                <p>一个基于C++&Raylib3D的MC模拟程序，旨在游戏开发实战。</p>
+                <p><strong>技术栈</strong>:......</p>
+                <p><strong>当前功能</strong>:</p>
+                <ul>
+                    <li>....</li></li>
+                    <li>....</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects" class="intro">
+            <h2>我的项目</h2>
+            
+            <div class="project-card">
+                <h4></h4>
+                <p>一个......</p>
+                <p><strong>技术栈</strong>:......</p>
+                <p><strong>当前功能</strong>:</p>
+                <ul>
+                    <li>....</li></li>
+                    <li>....</li>
+                </ul>
+                <a href="https://github.com/CodeCrafterNixx/MLPStudy/" class="btn btn-gh" target="_blank">
+                    <img src="/" width="16" alt="GitHub"> 查看源码
+                </a>
+            </div>
+            
+            <div class="project-card">
+                <h4><span>🔮</span> 未来项目</h4>
+                <p>更多精彩项目正在规划中...</p>
+                <p><strong>可能方向</strong>: 机器学习、Web程序、树莓派、3D视觉游戏开发</p>
+                <div style="text-align: center; color: #7f8c8d; padding: 1rem;">
+                    <p>Stay tuned for more exciting projects!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="intro">
+            <h2>联系我</h2>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div>
+                    <h3>邮箱</h3>
+                    <p>Ni502703@163.com</p>
+                </div>
+                <div>
+                    <h3>GitHub</h3>
+                    <p><a href="https://github.com/CodeCrafterNixx" target="_blank" style="color: var(--accent);">github.com/CodeCrafterNixx</a></p>
+                </div>
+            </div>
+        
         </section>
     </div>
-
-    
+   
     <footer>
+        <p>另外，感谢CZLJ社区动力极其admin：_CX_，编辑XinHaiTianZe的支持。<h6>友链：</h6></p>
+        <li><a href='https://CZLJ.net' TARGET='_blank'>CZLJ技术论坛</a></li>
+        <li><a href='https://codecraft.czlj.net' TARGET='_blank'>CodeCraft☆代码工艺官网·技术点亮人生</a></li>
+        <li><a href='http://x3cc.com' TARGET='_blank'>爪爪的blog，一起讨论算法和文学</a></li>
         <p>&copy; 2025 xinhaitianze. 保留所有权利。</p>
+        <p>本网站建于 2025.5.2</p>
+        <p>Made with ❤️ and ☕</p>
     </footer>
 </body>
 </html>
