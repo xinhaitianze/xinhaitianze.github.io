@@ -445,6 +445,111 @@
             </div>
             
             <div class="project-card">
+                <h4><span>🍃</span> xinhaitianze.github.io - 个人主页</h4>
+                <p>我的主页，如你所见</p>
+                <p><strong>技术栈</strong>: web, html</p>
+                <p><strong>当前功能</strong>:</p>
+                <ul>
+                    <li>展示我所遇的BUG（I'll kill all BUGs！）</li>
+                    <li>个人项目以及清单</li>
+                </ul>
+                <style>
+                    /* === 基础按钮样式 === */
+                    .btn-liquid {
+                      position: relative;
+                      display: inline-block;
+                      min-width: 120px;
+                      height: 40px;
+                      border-radius: 20px;
+                      margin: 10px;
+                      overflow: hidden;
+                      text-decoration: none;
+                    }
+                    
+                    /* === 液体背景层 === */
+                    .liquid-bg {
+                      position: absolute;
+                      top: -50px;
+                      left: 0;
+                      width: 100%;
+                      height: 200px;
+                      background: linear-gradient(45deg, 
+                        #3498db 20%, 
+                        #9b59b6 50%, 
+                        #e74c3c 80%);
+                      transition: all 0.5s ease;
+                      filter: blur(10px);
+                    }
+                    
+                    /* === 文字容器 === */
+                    .btn-content {
+                      position: relative;
+                      z-index: 10;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      height: 100%;
+                      color: white;
+                      font-weight: bold;
+                      font-family: 'Arial', sans-serif;
+                      letter-spacing: 1px;
+                    }
+                    
+                    /* === 悬停动画 === */
+                    .btn-liquid:hover .liquid-bg {
+                      top: -100px;
+                      animation: wave 2s infinite linear;
+                    }
+                    
+                    /* === 液体波动动画 === */
+                    @keyframes wave {
+                      0% { transform: rotate(0deg); }
+                      100% { transform: rotate(360deg); }
+                    }
+                    
+                    /* === 按钮边框光效 === */
+                    .btn-liquid::after {
+                      content: '';
+                      position: absolute;
+                      inset: 2px;
+                      border-radius: 18px;
+                      background: rgba(0,0,0,0.7);
+                      z-index: 1;
+                      transition: all 0.3s;
+                    }
+                    
+                    .btn-liquid:hover::after {
+                      background: rgba(0,0,0,0.3);
+                    }
+                    
+                    /* === 图标样式 === */
+                    .btn-icon {
+                      margin-right: 8px;
+                      filter: drop-shadow(0 0 2px rgba(255,255,255,0.5));
+                    }
+                  </style>
+                  </head>
+                  <body>
+                  
+                  <!-- GitHub按钮 -->
+                  <a href="https://github.com/xinhaitianze/xinhaitianze.github.io" class="btn-liquid" target="_blank">
+                    <div class="liquid-bg"></div>
+                    <div class="btn-content">
+                      <img src="image/GithubLogo.png" class="btn-icon" width="20" alt="GitHub">
+                      <span>查看源码</span>
+                    </div>
+                  </a>
+                  
+                  <!-- 消灭宣言按钮 -->
+                  <a href="./test_pages/Kill_BUGs.html" class="btn-liquid" target="_blank">
+                    <div class="liquid-bg" style="background: linear-gradient(45deg, #e74c3c 20%, #f39c12 50%, #d35400 80%);"></div>
+                    <div class="btn-content">
+                      <span>⚔️ 消灭宣言</span>
+                    </div>
+                  </a>
+            </div>
+
+            <div class="project-card">
                 <h4><span>🔮</span> 未来项目</h4>
                 <p>更多精彩项目正在规划中...</p>
                 <p><strong>可能方向</strong>: 计算机图形学、解释性语言、游戏开发</p>
