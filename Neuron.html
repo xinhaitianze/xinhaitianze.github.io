@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="xinhaitianze-AI.png" type="image/x-icon">
+    <title>NEURON</title>
+
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #6590bb;
+            --accent: #3498db;
+            --light: #ecf0f1;
+            --dark: #00000091;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header::after {
+            content: "";
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="10" height="10" x="0" y="0" fill="white" opacity="0.1"/></svg>');
+            opacity: 0.1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 0;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .header-subtitle {
+            position: relative;
+            z-index: 1;
+            opacity: 0.9;
+        }
+        .intro {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+        .intro:hover {
+            transform: translateY(-5px);
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--accent);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-right: 1rem;
+        }
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(115, 159, 255, 0.664);
+        }
+        .btn-gh {
+            background: var(--primary);
+        }
+        .btn-gh:hover {
+            background: #5c87af;
+        }
+        .project-status {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 0.5rem;
+        }
+        .status-active {
+            background: #2ecc71;
+            color: white;
+        }
+        .status-paused {
+            background: #f36c12;
+            color: white;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--primary);
+            color: white;
+        }
+    </style>
+    <body>
+        <header>
+            <div class="container">
+                <h1>NEURON</h1>
+                <p class="header-subtitle">由衷感谢您选择Neuron</p>
+                <p class="header-subtitle">Neuron 预览计划：您将预先体验NeuronAI，尽管她才刚刚起步，各个方面仍旧表现不佳</p>
+            </div>
+        </header>
+
+        <section id="contact" class="intro">
+            <h2>下载 NeuronAI Ver. 1.0 预览版
+                <span class="project-status status-active">此版本发布于：2025.5.4</span>
+            </h2>
+                <div>
+                    <h3>版本概述：</h3>
+                    <ul>
+                        <li>此版本训练所使用的对话仅有<strong>200</strong>多组</li>
+                        <li>因为训练数据较少，面对未见过的问题时会出现<strong>意义不明回答</strong></li>
+                        <li>面对一些训练数据较长的问题时，模型表现不佳（例如：<strong>重复输出</strong>、<strong>无意义符号</strong>）</li>
+                    </ul>
+
+                    <h3>下一步：</h3>
+                    <ul>
+                        <li>将对话增加到<strong>391</strong>组</li>
+                        <li>对一些未知问题进行修复</li>
+                        <li>可能对模型（Seq2Seq）进行一些改动，如：训练机制</li>
+                    </ul>
+
+                    <h3>不懂代码，不想配置python?</h3>
+                    <p>你可以下载已打包的NeuronAI，但您需要知道：</p>
+                    <ul>
+                        <li>软件启动速度极慢！</li>
+                        <li>对低版本Windows可能不支持（这是在Windows11上打包的exe文件）</li>
+                        <li>仅支持Windows操作系统</li>
+                        <li>我并不确定此软件可以在你的电脑上正常运行</li>
+                    </ul>
+                    <p>此压缩文件包含以下文件：</p>
+                        <ul>
+                            <li>data/Q&A.AiTrainData   训练数据</li>
+                            <li>best_model.pth         训练好的模型权重</li>
+                            <li>train.exe              训练用</li>
+                            <li>use.exe                使用训练好的模型</li>
+                            <li>vocab.pkl              模型的词汇表</li>
+                        </ul>
+                    <p><span class="project-status status-paused">注意</span>不要修改文件或文件夹名称，修改了训练数据（Q&A.AiTrainData）后，
+                    启动train.exe,之前所训练的模型便不可使用，因为词汇表已被改变，即便你想保存之前的模型
+                    也要记得连同词汇表（vocab.pkl）一并保存</p>
+
+                    <a href="https://pan.baidu.com/s/1hbXvm9zNvPNFwE7Q21su9w?pwd=1826" class="btn btn-gh" target="_blank">
+                        <img src="./xinhaitianze.ico" width="16" alt="GitHub"> 下载Neuron（Neuron1.0.zip）
+                    </a>
+                    
+                    <h3>想获取源代码？当然可以</h3>
+                    <p>您也可以在<strong>GitHub</strong>上使用<strong>Codespaces</strong>来运行此仓库</p>
+                    <a href="https://github.com/xinhaitianze/Neuron" class="btn btn-gh" target="_blank">
+                        <img src="./image/GithubLogo.png" width="16" alt="GitHub"> 查看源码
+                    </a>
+                </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 xinhaitianze. 保留所有权利。</p>
+            <p>Neuron预览计划</p>
+        </footer>
+
+    </body>
+</head>
+</html>
