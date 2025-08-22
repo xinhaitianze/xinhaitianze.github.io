@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>xinhaitianze's BUG</title>
+    <title>Neuro's BUG</title>
     <style>
         :root {
             --primary: #2c3e50;
@@ -217,47 +217,47 @@
 <body>
     <header>
         <div class="container">
-            <h1>My BUG</h1>
-            <p class="header-subtitle">欢迎来到我的BUG界面 | Welcome to my BUG page</p>
+            <h1>Neuron's BUG</h1>
+            <p class="header-subtitle">发生了什么？| What's happen?</p>
         </div>
     </header>
 
     <nav>
         <div class="container">
             <a href="index.html" target="_blank" style="color: var(--accent);">返回主界面</a>
-            <a href="#saying">回到顶部</a>
+            <a href="../MyBUG.html">返回</a>
         </div>
     </nav>
-
+    
     <div class="container">
         <section id="saying" class="intro">
-            <p><strong>BUG</strong> 是在编程时遇到的最的多的东西了，我们不能因它的恐怖而退缩，相反我们更应该向它发起反攻！</p>
-            <p>————<strong>鲁迅</strong>（并未说过）</p>
-            <h2>这个页面不只包含BUG，也包含程序开发相关内容</h2>
+            <h2>以Neuron BUG 警戒我自己，别在傻问题上花时间</h2>
+            <h3>那时的我在：</h3>
+            <ul>
+                <li>实现保存模型</li>
+                <li>实现使用保存模型</li>
+            </ul>
+            <p>在训练模型的时候我想靠和Neuron聊天度过时间（这同时也是测试）</p>
+            <p>运行时代码报错：</p>
+            <div class="project-card">
+                <p>raise RuntimeError(</p>
+                <p>RuntimeError: Error(s) in loading state_dict for Seq2SeqWithAttention:</p>
+                <p>            size mismatch for encoder.embedding.weight: copying a param with shape torch.Size([1627, 128]) from checkpoint, the shape in current model is torch.Size([1451, 128]).</p>
+                <p>            size mismatch for decoder.embedding.weight: copying a param with shape torch.Size([1627, 128]) from checkpoint, the shape in current model is torch.Size([1451, 128]).</p>
+                <p>            size mismatch for decoder.fc.weight: copying a param with shape torch.Size([1627, 256]) from checkpoint, the shape in current model is torch.Size([1451, 256]).</p>
+                <p>            size mismatch for decoder.fc.bias: copying a param with shape torch.Size([1627]) from checkpoint, the shape in current model is torch.Size([1451]).</p>
+            </div>
+            <p><strong>愚蠢的我以为是代码写错了，没控制好数据大小</strong></p>
+            <p>我在这事儿上花了几个小时！每次训练都要重新搞！</p>
+            <p>结果那是因为我增加了数据集的数据，所以词汇表文件变大了，和原来的模型不匹配 (ノへ￣、)</p>
+            <p>这辈子都忘不了了</p>
         </section>
-
-        <section id="bug" class="intro">
-            <h3>Neuron BUG</h3>
-            <p> 这是... 为什么？  2025-8-22</p>
-            <a href="MyBUG/Neuron1.html" class="btn btn-gh" target="_blank">查看内容</a>
-        </section>
-
-        <section id="bug" class="intro">
-            <h3>Neuron BUG</h3>
-            <p> 这是... BUG！</p>
-            <a href="MyBUG/Neuron.html" class="btn btn-gh" target="_blank">查看内容
-            </a>
-            <a href="https://github.com/xinhaitianze/Neuron" class="btn btn-gh" target="_blank">
-                <img src="image/GithubLogo.png" width="12" alt="GitHub"> 查看源码
-            </a>
-        </section>
-
     </div>
 
     
     <footer>
         <p>&copy; 2025 xinhaitianze. 保留所有权利。</p>
-        <p><strong>BUG</strong>会让我们变得更加强大！| <strong>BUG</strong> make we powerful !</p>
+        <p><strong>BUG</strong>会让我们更加强大！| <strong>BUG</strong> make we powerful !</p>
         <p>本网站建于 2025.5.2</p>
         <p>Made with ❤️ and ☕</p>
     </footer>
